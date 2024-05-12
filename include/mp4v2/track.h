@@ -147,6 +147,31 @@ MP4TrackId MP4AddAudioTrack(
     uint32_t      timeScale,
     MP4Duration   sampleDuration,
     uint8_t       audioType DEFAULT(MP4_MPEG4_AUDIO_TYPE) );
+    
+
+/** Add opus audio track to mp4 file.
+ * @param hFile handle of file for operation.
+ * @param timeScale the time scale in ticks per second of the track.
+ * @param channelCount the number of audio channels
+ * @param samplingRate the track sampling rate
+ 
+ *  It is recommended that the time scale be set to the sampling frequency
+ *  (e.g. 44100 Hz) of the audio so as to preserve the timing information
+ *  accurately.
+ *
+ *  If the audio encoding uses a fixed duration for each sample that should
+ *  be specified here. If not then the value #MP4_INVALID_DURATION
+ *  should be given for the sampleDuration argument.
+ 
+ *  @return On success, the track-id of the new track.
+ *      On error, #MP4_INVALID_TRACK_ID.
+*/
+MP4V2_EXPORT
+MP4TrackId MP4AddOpusAudioTrack(
+    MP4FileHandle hFile,
+    uint32_t timeScale,
+    uint16_t channelCount,
+    uint32_t samplingRate);
 
 /** Add ulaw track to mp4 file.
  *

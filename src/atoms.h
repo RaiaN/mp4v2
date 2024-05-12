@@ -178,6 +178,27 @@ private:
     MP4AvcCAtom &operator= ( const MP4AvcCAtom &src );
 };
 
+// Opus https://www.opus-codec.org/docs/opus_in_isobmff.html
+
+class MP4OpusAtom : public MP4Atom {
+public:
+    MP4OpusAtom(MP4File &file);
+    void Generate();
+private:
+    MP4OpusAtom();
+    MP4OpusAtom( const MP4OpusAtom &src );
+    MP4OpusAtom &operator= ( const MP4OpusAtom &src );
+};
+
+class MP4DOpsAtom : public MP4Atom {
+public:
+    MP4DOpsAtom(MP4File &file);
+    void Generate();
+private:
+    MP4DOpsAtom();
+    MP4DOpsAtom( const MP4DOpsAtom &src );
+    MP4DOpsAtom &operator= ( const MP4DOpsAtom &src );
+};
 
 class MP4D263Atom : public MP4Atom {
 public:

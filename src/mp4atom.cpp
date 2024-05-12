@@ -816,6 +816,11 @@ MP4Atom::factory( MP4File &file, MP4Atom* parent, const char* type )
 
     // no-context construction (old-style)
     switch( (uint8_t)type[0] ) {
+        case 'O':    
+            if( ATOMID(type) == ATOMID("Opus") )
+                return new MP4OpusAtom(file);
+            break;
+        
         case 'S':
             if( ATOMID(type) == ATOMID("SVQ3") )
                 return new MP4VideoAtom( file, type );
@@ -858,6 +863,8 @@ MP4Atom::factory( MP4File &file, MP4Atom* parent, const char* type )
                 return new MP4TrefTypeAtom( file, type );
             if( ATOMID(type) == ATOMID("dac3") )
                 return new MP4DAc3Atom(file);
+            if( ATOMID(type) == ATOMID("dOps") )
+                return new MP4DOpsAtom(file);
             break;
 
         case 'e':

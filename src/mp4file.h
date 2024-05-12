@@ -262,6 +262,11 @@ public:
         uint32_t timeScale,
         MP4Duration sampleDuration,
         uint8_t audioType);
+        
+    MP4TrackId AddOpusAudioTrack(
+        uint32_t timeScale,
+        uint16_t channelCount,
+        uint32_t samplingRate);
 
     MP4TrackId AddULawAudioTrack(
         uint32_t timeScale);
