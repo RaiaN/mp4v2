@@ -5,7 +5,7 @@ project(MP4v2 VERSION 2.1.3)
 set(CMAKE_CXX_STANDARD 11)
 
 option(BUILD_SHARED "Build libmp4v2 as a shared library" ON)
-option(BUILD_UTILS "Build MP4v2 auxiliary tools" ON)
+option(BUILD_UTILS "Build MP4v2 auxiliary tools" OFF)
 
 #
 # Generate include/mp4v2/project.h and libplatform/config.h
@@ -223,6 +223,8 @@ set(MP4V2_SOURCE_FILES
         src/atom_dac3.cpp
         src/atom_damr.cpp
         src/atom_dref.cpp
+        src/atom_dops.cpp
+        src/atom_opus.cpp
         src/atom_elst.cpp
         src/atom_enca.cpp
         src/atom_encv.cpp
