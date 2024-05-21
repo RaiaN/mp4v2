@@ -7,6 +7,22 @@ set(CMAKE_CXX_STANDARD 11)
 option(BUILD_SHARED "Build libmp4v2 as a shared library" ON)
 option(BUILD_UTILS "Build MP4v2 auxiliary tools" OFF)
 
+option(BUILD_ANDROID "Build for Android" OFF)
+
+if(BUILD_ANDROID)
+    set(CMAKE_SYSTEM_NAME Android)
+    set(CMAKE_SYSTEM_PROCESSOR aarch64)
+    set(CMAKE_SYSTEM_VERSION 26) # API level
+    set(ANDROID_PLATFORM "android-26")
+    set(CMAKE_ANDROID_ARCH_ABI arm64-v8a)
+    set(CMAKE_ANDROID_NDK "/root/android-ndk-r26d/android-ndk-r26d")
+    
+    set(CMAKE_C_COMPILER /root/android-ndk-r26d/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang)
+    set(CMAKE_CXX_COMPILER /root/android-ndk-r26d/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++)
+    set(CMAKE_SYSROOT /root/android-ndk-r26d/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot)
+endif()
+
+
 #
 # Generate include/mp4v2/project.h and libplatform/config.h
 #
