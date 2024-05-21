@@ -244,6 +244,8 @@ set(MP4V2_SOURCE_FILES
         src/atom_mvhd.cpp
         src/atom_nmhd.cpp
         src/atom_ohdr.cpp
+        src/atom_opus.cpp
+        src/atom_dops.cpp
         src/atom_pasp.cpp
         src/atom_root.cpp
         src/atom_rtp.cpp
