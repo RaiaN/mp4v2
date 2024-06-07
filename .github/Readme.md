@@ -1,3 +1,5 @@
+## Warning: audio encoding using added OPUS codec leads to runtime crashes, no fix yet.
+
 ## MP4v2 - *A C/C++ library to create, modify and read MP4 files*
 [![Last commit](https://img.shields.io/github/last-commit/enzo1982/mp4v2.svg)](https://github.com/enzo1982/mp4v2/commits/main) [![Last commit](https://img.shields.io/github/v/release/enzo1982/mp4v2)](https://github.com/enzo1982/mp4v2/releases)
 
